@@ -49,7 +49,6 @@ body {
     margin-bottom: -30px;
     /* Pulls the container up slightly to overlap with the element below, creating a connected effect */
     /* Slight overlap for connectedness */
-    /* Your note about the visual overlap */
     z-index: 10;
     /* Places this container above other elements with lower z-index, ensuring it appears on top */
     display: flex;
@@ -63,52 +62,86 @@ body {
 
 .shinchan-img {
     width: 100%;
+    /* Makes the image fill the full width of its parent container (.shinchan-container) */
     display: block;
+    /* Changes the image from inline (default) to block, preventing extra space below it */
     mix-blend-mode: multiply;
+    /* Blends the image with the background using multiply mode, making it merge with underlying colors */
     filter: contrast(1.1);
+    /* Slightly increases the contrast of the image by 10%, making colors pop more */
 }
+
 
 .eyes-wrapper {
     position: absolute;
+    /* Positions this wrapper relative to its nearest positioned ancestor (shinchan-container). It allows precise placement of eyes inside the container */
     top: 0;
+    /* Places the top edge of the wrapper at the top of the container */
     left: 0;
+    /* Places the left edge of the wrapper at the left of the container */
     width: 100%;
+    /* Makes the wrapper span the full width of the container */
     height: 100%;
+    /* Makes the wrapper span the full height of the container */
     pointer-events: none;
+    /* Disables mouse interactions on this wrapper and its children, so the cursor clicks pass through to elements below (like the form) */
 }
 
 .eye {
     position: absolute;
+    /* Allows precise positioning inside the .eyes-wrapper */
     width: 40px;
+    /* Sets the eye’s width; tuned to fit nicely inside the 180px container */
     /* Size tuned for the 180px container */
+    /* Your note about size scaling */
     height: 40px;
+    /* Sets the eye’s height to make it a circle */
     background: #fff;
+    /* Sets the eye’s fill color to white */
     border-radius: 50%;
+    /* Makes the square perfectly circular */
     border: 3px solid #000;
+    /* Adds a black outline around the eye */
     display: flex;
+    /* Enables Flexbox to easily center the pupil inside the eye */
     justify-content: center;
+    /* Horizontally centers the pupil inside the eye */
     align-items: center;
+    /* Vertically centers the pupil inside the eye */
     overflow: hidden;
+    /* Ensures that the pupil doesn’t spill outside the eye boundary */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow for depth, making the eye look more 3D */
 }
 
 /* Positioning the eyes for the monster */
 .left-eye {
     top: 35%;
+    /* Moves the top edge of the left eye 35% down from the top of the wrapper (.eyes-wrapper) */
     left: 20%;
+    /* Moves the left edge of the left eye 20% from the left of the wrapper */
 }
+
 
 .right-eye {
     top: 35%;
+    /* Moves the top edge of the right eye 35% down from the top of its parent (.eyes-wrapper) */
     right: 20%;
+    /* Moves the right edge of the right eye 20% away from the right edge of its parent */
 }
+
 
 .pupil {
     width: 10px;
+    /* Sets the pupil’s width to 10 pixels */
     height: 10px;
+    /* Sets the pupil’s height to 10 pixels, making it a square initially */
     background: #000;
+    /* Fills the pupil with black color */
     border-radius: 50%;
+    /* Turns the square into a perfect circle */
     /* No absolute position here, we translate it with JS */
+    /* This means we do NOT position the pupil with CSS. Instead, JavaScript will move it dynamically inside the eye. */
 }
 
 /* Forms */
