@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    /* removes default body margin */
+    height: 100vh;
+    /* makes body take full viewport height */
+    display: flex;
+    /* enables flexbox layout */
+    justify-content: center;
+    /* centers content horizontally */
+    align-items: center;
+    /* centers content vertically */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* clean font fallback stack */
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    /* nice gradient background */
+    overflow: hidden;
+    /* hides scrollbars if content overflows */
+}
+
+
+.container {
+    position: relative;
+    /* Sets the positioning context for child elements; allows absolute positioning inside this container */
+    width: 350px;
+    /* Sets the container's width to 350 pixels */
+    display: flex;
+    /* Enables Flexbox layout for the container, making its children flexible and alignable */
+    flex-direction: column;
+    /* Arranges the child elements vertically in a column */
+    justify-content: center;
+    /* Vertically centers the child elements within the container */
+    align-items: center;
+    /* Horizontally centers the child elements within the container */
+    padding: 20px;
+    /* Adds 20 pixels of space inside the container on all sides */
+}
+
+
+/* Box for the whole character area */
+.shinchan-container {
+    position: relative;
+    /* Sets a positioning context for absolutely positioned children inside this container */
+    width: 180px;
+    /* Sets the width of the container to 180 pixels */
+    /* Smaller, centered above form */
+    /* This is your note about its visual role */
+    height: 180px;
+    /* Sets the height of the container to 180 pixels */
+    margin-bottom: -30px;
+    /* Pulls the container up slightly to overlap with the element below, creating a connected effect */
+    /* Slight overlap for connectedness */
+    /* Your note about the visual overlap */
+    z-index: 10;
+    /* Places this container above other elements with lower z-index, ensuring it appears on top */
+    display: flex;
+    /* Enables Flexbox layout for child elements */
+    justify-content: center;
+    /* Horizontally centers children inside this container */
+    align-items: center;
+    /* Vertically centers children inside this container */
+}
+
+
+.shinchan-img {
+    width: 100%;
+    display: block;
+    mix-blend-mode: multiply;
+    filter: contrast(1.1);
+}
+
+.eyes-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.eye {
+    position: absolute;
+    width: 40px;
+    /* Size tuned for the 180px container */
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    border: 3px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Positioning the eyes for the monster */
+.left-eye {
+    top: 35%;
+    left: 20%;
+}
+
+.right-eye {
+    top: 35%;
+    right: 20%;
+}
+
+.pupil {
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    /* No absolute position here, we translate it with JS */
+}
+
+/* Forms */
+.form-container {
+    width: 350px;
+    /* Fixed width for form */
+    background: rgba(255, 255, 255, 0.9);
+    /* Slight transparency */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.form-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-container p span {
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
