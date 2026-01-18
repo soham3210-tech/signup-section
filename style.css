@@ -140,6 +140,7 @@ body {
     /* Fills the pupil with black color */
     border-radius: 50%;
     /* Turns the square into a perfect circle */
+    
     /* No absolute position here, we translate it with JS */
     /* This means we do NOT position the pupil with CSS. Instead, JavaScript will move it dynamically inside the eye. */
 }
