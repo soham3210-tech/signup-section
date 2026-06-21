@@ -1,21 +1,19 @@
 // Select all the eye elements (left-eye and right-eye)
-const eyes = document.querySelectorAll('.eye');
+const eyes = document.querySelectorAll(".eye");
 
 // Select the main container (not used in this code, but could be useful)
-const container = document.querySelector('.container');
+const container = document.querySelector(".container");
 
 // Add an event listener for mouse movement
 // This will make the pupils follow the cursor
-document.addEventListener('mousemove', (e) => {
-  
+document.addEventListener("mousemove", (e) => {
   // Loop through each eye individually
-  eyes.forEach(eye => {
-
+  eyes.forEach((eye) => {
     // Select the pupil inside the current eye
-    const pupil = eye.querySelector('.pupil');
+    const pupil = eye.querySelector(".pupil");
 
     // Get the position and size of the eye relative to the viewport
-    // rect contains: top, left, bottom, right, width, height
+    // rect contains: top, left, bottom, right, width, height of eye ...
     const rect = eye.getBoundingClientRect();
 
     // Calculate the center coordinates of the eye
@@ -40,27 +38,26 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-
 // =========================
 // Toggle between Login and Signup forms
 // =========================
 
 // Select the clickable elements that switch forms
-const toggleForm = document.getElementById('toggleForm'); // "Signup" link
-const toggleLogin = document.getElementById('toggleLogin'); // "Login" link
+const toggleForm = document.getElementById("toggleForm"); // "Signup" link
+const toggleLogin = document.getElementById("toggleLogin"); // "Login" link
 
 // Select the form containers
-const loginContainer = document.querySelector('.form-container:not(.hidden)'); // currently visible login form
-const signupContainer = document.getElementById('signupContainer'); // hidden signup form
+const loginContainer = document.querySelector(".form-container:not(.hidden)"); // currently visible login form
+const signupContainer = document.getElementById("signupContainer"); // hidden signup form
 
 // When the "Signup" text is clicked
-toggleForm.addEventListener('click', () => {
-  loginContainer.classList.add('hidden'); // hide login form
-  signupContainer.classList.remove('hidden'); // show signup form
+toggleForm.addEventListener("click", () => {
+  loginContainer.classList.add("hidden"); // hide login form
+  signupContainer.classList.remove("hidden"); // show signup form
 });
 
 // When the "Login" text is clicked
-toggleLogin.addEventListener('click', () => {
-  signupContainer.classList.add('hidden'); // hide signup form
-  loginContainer.classList.remove('hidden'); // show login form
+toggleLogin.addEventListener("click", () => {
+  signupContainer.classList.add("hidden"); // hide signup form
+  loginContainer.classList.remove("hidden"); // show login form
 });
